@@ -15,5 +15,7 @@ data class Producto(
     val precio: Double,
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
-    val createAt: Date
+    val createAt: Date,
+    @Transient
+    var port: Int
 ): Serializable

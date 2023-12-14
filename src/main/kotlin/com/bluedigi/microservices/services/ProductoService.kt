@@ -13,7 +13,8 @@ class ProductoService: IProductoService {
 
     @Transactional(readOnly = true)
     override fun findAll(): List<Producto> {
-        return productoInterface.findAll() as MutableList<Producto>
+        val lista = productoInterface.findAll()
+        return lista as MutableList<Producto>
     }
 
     @Transactional(readOnly = true)
