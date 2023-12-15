@@ -28,10 +28,10 @@ class ProductsController {
 
     @GetMapping("/find/{id}")
     fun find(@PathVariable id: Long): Producto {
-        if (id == 10L) {
+        if (id == 1L) {
             throw IllegalStateException("Produto No encontrado")
         }
-        if (id == 7L) {
+        if (id == 2L) {
             TimeUnit.SECONDS.sleep(5L)
         }
         val producto = service.findById(id)
