@@ -34,7 +34,13 @@ class ProductsController {
         if (id == 2L) {
             TimeUnit.SECONDS.sleep(5L)
         }
-        val producto = service.findById(id)
+        var producto = Producto()
+        try {
+            producto = service.findById(id)
+        }catch (e: Exception){
+            println(e.message)
+            throw IllegalStateException("Produto No encontrado")
+        }
         producto.port = Integer.parseInt(env.getProperty("local.server.port"))
         return producto
     }

@@ -3,6 +3,7 @@ package com.bluedigi.microservices.models
 import jakarta.persistence.*
 import jakarta.persistence.Entity
 import java.io.Serializable
+import java.time.LocalDate
 import java.util.Date
 
 @Table(name = "productos")
@@ -10,12 +11,12 @@ import java.util.Date
 data class Producto(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
-    val nombre: String,
-    val precio: Double,
+    val id: Long = 0L,
+    val nombre: String = "",
+    val precio: Double = 0.0,
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
-    val createAt: Date,
+    val createAt: Date = Date(),
     @Transient
-    var port: Int
+    var port: Int = 0
 ): Serializable
