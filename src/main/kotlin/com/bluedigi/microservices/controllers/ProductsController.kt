@@ -34,7 +34,7 @@ class ProductsController {
         if (id == 2L) {
             TimeUnit.SECONDS.sleep(5L)
         }
-        var producto = Producto()
+        val producto: Producto
         try {
             producto = service.findById(id)
         }catch (e: Exception){
