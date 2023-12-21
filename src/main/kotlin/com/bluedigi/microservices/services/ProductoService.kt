@@ -22,4 +22,15 @@ class ProductoService: IProductoService {
         return productoInterface.findById(id).orElse(null)
     }
 
+    @Transactional
+    override fun save(producto: Producto): Producto {
+        return productoInterface.save(producto)
+    }
+
+    @Transactional
+    override fun delete(id: Long): String {
+        productoInterface.deleteById(id)
+        return "borrado con exito"
+    }
+
 }

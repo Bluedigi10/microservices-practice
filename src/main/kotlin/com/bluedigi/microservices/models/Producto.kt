@@ -12,8 +12,8 @@ data class Producto(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0L,
-    val nombre: String = "",
-    val precio: Double = 0.0,
+    var nombre: String = "",
+    var precio: Double = 0.0,
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
     val createAt: Date = Date(),
